@@ -30,4 +30,81 @@ $score = 100
 if (($score >= 90) && ($score =100 )){
     echo "you got an A";
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<?php
+//$x =5;
+//function localVariable(){
+ //  global $x;
+ //   $y = 10;
+ //   echo $x;
+  //  echo $y;
+//}
+//localVariable();
+//function callCounter() {
+  //  static $count = 0;
+  //  $count++;
+  //  echo "the value of count variable is : $count <br>";
+
+//}
+//callCounter();
+//callCounter();
+
+///$sports = array('football', 'basketball', 'handball', 'volleyball');
+//array_push($sports, 'golf');
+//var_dump($sports);
+
+//$sports = array('football', 'basketball', 'handball', 'volleyball');
+//array_pop($sports);
+//var_dump($sports);
+//$x = 5;
+//$y = 7;
+
+//function sum() {
+ //   global $x, $y;
+//    $y = $x + $y;
+
+//}
+//sum();
+//echo $y;
+//$sports = ['football', 'basketball', 'handball', 'volleyball'];
+//for($i=0; $i<4; $i++) {
+//    echo $sports[$i],  "\n";
+//}
+//$sports = array('football', 'basketball', 'handball', 'volleyball');
+//array_unshift($sport, 'Tennis');
+//var_dump($sports);
+
+//$sports = array('football', 'basketball', 'handball', 'volleyball');
+//array_shift($sports);
+//var_dump($sports);
+//$sports = array('football', 'basketball', 'handball', 'volleyball');
+
+//$output1  = array_slice($sports, 2);
+//$output2 = array_slice($sports, -2, 1);
+//$output3 = array_slice($sports, 0 , 3);
+
+//var_dump($output1, $output2, $output3);
+//$myvalues = array(12, 24, 34, 48);
+//var_dump(array_sum($myvalues));
+$weekly_temperature = array(25, 35, 23,12 ,24 ,13);
+$average = array_sum($weekly_temperature)/6;
+echo ($average);
+?>
+
+
+
+
 ?>
