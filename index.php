@@ -1,9 +1,9 @@
 <?php
 
-$num = -1;
-if($num<0){
+//$num = -1;
+//if($num<0){
   //   echo "$num is less than 0";
-}
+//}
   
 
 ///$age = 16;
@@ -26,25 +26,14 @@ if($num<0){
     //echo "the value of/$num is a positiove number";
 //}
 // Write a program that takes a student's score as input and outputs their grades with this system: A: 90-100, B: 80-89, C:70-79, D: 60-69, F: below 60
-$score = 100
-if (($score >= 90) && ($score =100 )){
-    echo "you got an A";
-}
+//$score = 100
+//if (($score >= 90) && ($score =100 )){
+//    echo "you got an A";
+//}
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-<?php
 //$x =5;
 //function localVariable(){
  //  global $x;
@@ -62,7 +51,7 @@ if (($score >= 90) && ($score =100 )){
 //callCounter();
 //callCounter();
 
-///$sports = array('football', 'basketball', 'handball', 'volleyball');
+//$sports = array('football', 'basketball', 'handball', 'volleyball');
 //array_push($sports, 'golf');
 //var_dump($sports);
 
@@ -99,12 +88,17 @@ if (($score >= 90) && ($score =100 )){
 //var_dump($output1, $output2, $output3);
 //$myvalues = array(12, 24, 34, 48);
 //var_dump(array_sum($myvalues));
-$weekly_temperature = array(25, 35, 23,12 ,24 ,13);
-$average = array_sum($weekly_temperature)/6;
-echo ($average);
-?>
+//$weekly_temperature = array(25, 35, 23,12 ,24 ,13);
+//$average = array_sum($weekly_temperature)/6;
+//echo ($average);
 
-
-
-
+function sumArray($numbers) {
+    if (!is_array($numbers)) {
+        return "Input must be an array.";
+    }
+    return array_sum($numbers);
+}
+$numbers = [1, 2, 3, 4, 5];
+$result = sumArray($numbers);
+echo "The sum is: " . $result;
 ?>
