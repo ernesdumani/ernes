@@ -108,62 +108,81 @@
 //
 //)
 
- $dogs = array(
-  array("Chihuahua", "Mexico", 25),
-  array("Husky", "Siberian",15),
-  array("Bulldog", "England",10)
-);
+// $dogs = array(
+ // array("Chihuahua", "Mexico", 25),
+ // array("Husky", "Siberian",15),
+ // array("Bulldog", "England",10)
+//);
 
-echo $dogs[0][0]. " Origin ".$dogs[0][1]. ", Life Span ". $dogs[0][2]. "<br>";
-echo $dogs[1][0]. " Origin ".$dogs[1][1]. ", Life Span ". $dogs[1][2]. "<br>";
-echo $dogs[2][0]. " Origin ".$dogs[2][1]. ", Life Span ". $dogs[2][2]. "<br>";
+//echo $dogs[0][0]. " Origin ".$dogs[0][1]. ", Life Span ". $dogs[0][2]. "<br>";
+///echo $dogs[1][0]. " Origin ".$dogs[1][1]. ", Life Span ". $dogs[1][2]. "<br>";
+//echo $dogs[2][0]. " Origin ".$dogs[2][1]. ", Life Span ". $dogs[2][2]. "<br>";
 
-for($row = 0; $row<3; $row++){
-  echo "<p><b>Row Numbber $row</b></p>";
-  echo "<ul>";
-  for ($col = 0; $col<3; $col++){
-    echo "<li>".$dogs[$row][$col]."</li>";
-  }
-  echo "</ul>";
-}
+//for($row = 0; $row<3; $row++){
+//  echo "<p><b>Row Numbber $row</b></p>";
+ // echo "<ul>";
+ // for ($col = 0; $col<3; $col++){
+ //   echo "<li>".$dogs[$row][$col]."</li>";
+ // }
+//  echo "</ul>";
+//}
 
 
-echo "</table>";
-$array4D = [
-  [
-      [
-          ['Item 1-1-1-1', 'Item 1-1-1-2'],
-          ['Item 1-1-2-1', 'Item 1-1-2-2']
-      ],
-      [
-          ['Item 1-2-1-1', 'Item 1-2-1-2'],
-          ['Item 1-2-2-1', 'Item 1-2-2-2']
-      ]
-  ],
-];
+///echo "</table>";
+//$array4D = [
+  //[
+ //     [
+ //         ['Item 1-1-1-1', 'Item 1-1-1-2'],
+ //         ['Item 1-1-2-1', 'Item 1-1-2-2']
+  //    ],
+   //   [
+  //        ['Item 1-2-1-1', 'Item 1-2-1-2'],
+  //        ['Item 1-2-2-1', 'Item 1-2-2-2']
+  //    ]
+ // ],
+//];
 
-echo "<table border='1'>";
+///echo "<table border='1'>";
 
-for ($i = 0; $i < count($array4D); $i++) {
-  echo "<tr><td colspan='2'>Iphone 1: $i</td></tr>";
+//for ($i = 0; $i < count($array4D); $i++) {
+ // echo "<tr><td colspan='2'>Iphone 1: $i</td></tr>";
   
-  for ($j = 0; $j < count($array4D[$i]); $j++) {
-      echo "<tr><td>Iphone 2: $j</td><td>";
+ // for ($j = 0; $j < count($array4D[$i]); $j++) {
+ //     echo "<tr><td>Iphone 2: $j</td><td>";
 
-      for ($k = 0; $k < count($array4D[$i][$j]); $k++) {
-          echo "<div>Iphone 3: $k</div>";
-          echo "<ul>";
+ //     for ($k = 0; $k < count($array4D[$i][$j]); $k++) {
+  //        echo "<div>Iphone 3: $k</div>";
+  //        echo "<ul>";
 
-          for ($l = 0; $l < count($array4D[$i][$j][$k]); $l++) {
-              echo "<li>Iphone 4: $l - " . $array4D[$i][$j][$k][$l] . "</li>";
-          }
+       //   for ($l = 0; $l < count($array4D[$i][$j][$k]); $l++) {
+      //        echo "<li>Iphone 4: $l - " . $array4D[$i][$j][$k][$l] . "</li>";
+      //    }
 
-          echo "</ul>";
-      }
-      echo "</td></tr>";
-  }
+    //      echo "</ul>";
+   //   }
+   //   echo "</td></tr>";
+ // }
+//}
+
+//echo "</table>";
+
+$host ='localhost';
+$user = 'root';
+$pass = '';
+
+// try{
+//     $conn = new PDO("mysql:host=$host, $user, $pass");
+//     echo "Connected";
+
+//  } catch(exception $e){
+//         echo "Not connected";
+//     }
+try{
+    $conn = new PDO("mysql:host=$host, $user, $pass");
+    $sql = "CREATE DATABASE testdb";
+    $conn -> exec($sql);
+    echo "Database is created";
+}catch(exception $e){
+  echo "Database not created, something went wrong!!";
 }
-
-echo "</table>";
-
 ?>
