@@ -1,3 +1,27 @@
+<?php
+session_start();
+if(!isset($_SESSION['admin_logged_in'])){
+    header("Location: login.php");
+    exit();
+
+}
+
+require_once("config.php");
+
+//fetch allusers from the database
+
+$sql = "SELECT * FROM users";
+$result = $conn->query($sql);
+
+//check if query was executed
+if(!$result){
+    die("Database query failed: "/ $conn->error);
+}
+?>
+
+
+
+
 <?php require_once("header.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -96,6 +120,16 @@
                 </thead>
                 <tbody>
                     <!-- Example rows -->
+                     <?php
+                     if($result->num_rows > 0){
+                        while($row= $result->fetch_assoc()){
+                            echo "<tr>
+                            <td> {$row[id]} </td>
+                            <td>".htmlspecialchars($row['username'])."</td>
+                            <td>".htmlspecialchars($row['email'])."</td>
+                            ";
+                        }
+                     }
                     <tr>
                         <td>1</td>
                         <td>john_doe</td>
