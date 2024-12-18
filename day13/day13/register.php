@@ -1,3 +1,32 @@
+<?php
+require_once("config.php");
+$error="";
+$success;
+
+if($_SERVER["REQUEST_METHOD"]=="POST"){
+    $username=mysqli_real_escape_string($conn, $_POST['username']);
+    $email=mysqli_real_escape_string($conn, $_POST['email']);
+    $password=mysqli_real_escape_string($conn, $_POST['password']);
+  if(empty($username)|| empty($email) || empty($password)){
+    $error="all fields required";
+
+  }else{
+    $check_user="SELECT * FROM users WHERE username='$username' OR email= '$email'";
+    $result=$conn->query($check_user);
+    if($result->nuk=m_rows>0){
+        $error="username or email already exists";
+    }else{
+        $hashed_password=md5($password);
+        $sql="INSERT INTO users(username,email,password) VALUES ('$username', '$email', '$hashed_password')";
+        if($conn->query($sql)===TRUE){
+        $success="Register successful! You camn jnow <a her='login.php'>Login here </a>";
+            }else{
+            $error="Error:" $conn->error;
+    
+    }
+  }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
